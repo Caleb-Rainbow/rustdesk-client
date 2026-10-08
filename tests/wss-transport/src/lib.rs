@@ -401,10 +401,17 @@ mod tests {
             });
             for _ in 0..2 {
                 let error = strict_wss::connect(&url, 1000).await.unwrap_err();
-                assert!(
-                    matches!(error.downcast_ref::<WsError>(), Some(WsError::Tls(_))),
-                    "{error:?}"
-                );
+                let rejected = match error.downcast_ref::<WsError>() {
+                    Some(WsError::Tls(_)) => true, // Native TLS on Windows.
+                    Some(WsError::Io(io_error)) => matches!(
+                        io_error.get_ref().and_then(|cause| {
+                            cause.downcast_ref::<tokio_rustls::rustls::Error>()
+                        }),
+                        Some(tokio_rustls::rustls::Error::InvalidCertificate(_))
+                    ), // tokio-rustls preserves certificate errors inside io::Error.
+                    _ => false,
+                };
+                assert!(rejected, "{error:?}");
             }
             server.await.unwrap();
         })
