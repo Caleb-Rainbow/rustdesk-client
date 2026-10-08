@@ -4,7 +4,7 @@
 
 构建入口：`.github/workflows/custom-client.yml`，仅输出 Windows x64 Flutter 包、Android ARM64 与 ARMv7 APK。源码保留 AGPL-3.0 许可；下方保留上游项目介绍。
 
-这是一轮可审查的源码实现。TLS 库、分片和重连策略不能保证浏览器流量不可区分，也不能保证运营商不会拦截；完整 EXE/APK 构建及真实设备、运营商网络验收尚未完成。
+Windows x64、Android ARM64 与 ARMv7 已实际构建并通过产物检查，见 [构建记录](https://github.com/Caleb-Rainbow/rustdesk-client/actions/runs/37762169696) 与 [下载和验收说明](docs/定制客户端.md)。TLS 库、分片和重连策略不能保证浏览器流量不可区分，也不能保证运营商不会拦截；真实设备、运营商网络验收尚未完成。
 
 ---
 
