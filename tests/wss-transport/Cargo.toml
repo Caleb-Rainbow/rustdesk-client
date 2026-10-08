@@ -1,0 +1,28 @@
+[package]
+name = "rustdesk-wss-transport-tests"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+
+# Compile the real production helper without the desktop/capture dependencies.
+[workspace]
+resolver = "3"
+
+[dependencies]
+anyhow = "1.0"
+bytes = "1.10"
+futures = "0.3"
+tokio = { version = "1.44", features = ["full"] }
+tokio-native-tls = "0.3"
+native-tls = "=0.2.18"
+tokio-rustls = { version = "=0.26.0", default-features = false, features = ["logging", "tls12", "ring"] }
+tokio-tungstenite = { version = "=0.26.2", features = ["native-tls", "rustls-tls-native-roots", "rustls-tls-webpki-roots"] }
+rustls-platform-verifier = "=0.6.2"
+url = "2.5"
+
+[dev-dependencies]
+rcgen = "=0.13.2"
+# rcgen accepts newer time releases whose MSRV exceeds the client toolchain.
+time = "=0.3.36"
+tokio-tungstenite-legacy = { package = "tokio-tungstenite", version = "=0.17.2", default-features = false }

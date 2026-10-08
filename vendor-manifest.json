@@ -1,0 +1,14 @@
+{
+  "upstream": {
+    "repository": "https://github.com/rustdesk/rustdesk",
+    "tag": "1.4.9",
+    "commit": "6c578292e8ebbbec708b76986ba8c4bc7c509747"
+  },
+  "hbb_common": {
+    "repository": "https://github.com/rustdesk/hbb_common",
+    "commit": "7e1c392c62d39c364127307cd408421dd5f8cfb0",
+    "archive_sha256": "e108a197f00ae5b77a810a213d391469f8659ef51d7c975d858e5c1e0e22a899",
+    "path": "libs/hbb_common",
+    "modified": true
+  }
+}

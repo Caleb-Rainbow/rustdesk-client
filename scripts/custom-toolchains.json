@@ -1,0 +1,14 @@
+{
+  "rust": "1.85.1",
+  "test_rust": "1.85.1",
+  "flutter": "3.24.5",
+  "bridge_flutter": "3.22.3",
+  "flutter_rust_bridge": "1.80.1",
+  "cargo_expand": "1.0.95",
+  "cargo_ndk": "3.1.2",
+  "llvm": "15.0.6",
+  "ndk": "r28c",
+  "ndk_revision": "28.2.13676358",
+  "vcpkg": "120deac3062162151622ca4860575a33844ba10b",
+  "topmost_window": "ecd8d6a139eee76845ea66423fb739af450fda90"
+}
